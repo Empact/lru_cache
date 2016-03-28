@@ -1,0 +1,11 @@
+Version 1.0.0 (Released 2016-03-29)
+===================================
+Bugs
+* Fix that shift didn't update size
+* Fix that shift didn't properly handle the last element
+https://github.com/rsms/js-lru/issues/6
+
+Features
+* Enable the user to require lru-core, which is a minimal set of functionality
+* Publish to npm under lru-js
+https://github.com/rsms/js-lru/issues/7
