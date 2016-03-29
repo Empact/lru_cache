@@ -165,7 +165,7 @@ To include only the minimal code above, require lru-core.js instead of lru.js
 
 # MIT license
 
-Copyright (c) 2014 Rasmus Andersson <http://hunch.se/>, Ben Woosley
+Copyright (c) 2016 Rasmus Andersson <http://hunch.se/>, Ben Woosley
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
