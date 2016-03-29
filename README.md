@@ -15,8 +15,8 @@ This implementation is compatible with most JavaScript environments (including y
   an "older" entry (doubly-linked, "older" being close to "head" and "newer"
   being closer to "tail").
 
-- Key lookup is done through a key-entry mapping native object, which on most 
-  platforms mean `O(1)` complexity. This comes at a very low memory cost  (for 
+- Key lookup is done through a key-entry mapping native object, which on most
+  platforms mean `O(1)` complexity. This comes at a very low memory cost  (for
   storing two extra pointers for each entry).
 
 Fancy ASCII art illustration of the general design:
@@ -26,7 +26,7 @@ Fancy ASCII art illustration of the general design:
        | head |.newer => |      |.newer => |      |.newer => | tail |      
        |  A   |          |  B   |          |  C   |          |  D   |      
        |______| <= older.|______| <= older.|______| <= older.|______|      
-                                                                           
+
     removed  <--  <--  <--  <--  <--  <--  <--  <--  <--  <--  <--  added
 
 ## Example
@@ -46,6 +46,8 @@ Fancy ASCII art illustration of the general design:
 # API
 
 An entry is a simple `Object` with at least two members: `{key:Object, value:Object}`. An entry might also have a `newer` member which points to a newer entry, and/or a `older` member pointing to an older entry.
+
+## Included in lru-core.js and lru.js:
 
 ### new LRUCache(Number limit) -> LRUCache instance
 
@@ -71,15 +73,6 @@ Put `value` into the cache associated with `key`.
 
 Retrieve value for, and register recent use of, `key`. Returns the value associated with `key` or `undefined` if not in the cache.
 
-### *LRUCache.prototype*.find (Object key) -> Object entry
-
-Check if `key` is in the cache *without registering recent use*. Feasible if
-you do not want to chage the state of the cache, but only "peek" at it.
-Returns the entry associated with `key` if found, otherwise `undefined` is
-returned.
-
-> **Note:** The entry returned is *managed by the cache* (until purged) and thus contains members with strong references which might be altered at any time by the cache object. You should look at the returned entry as being immutable.
-
 ### *LRUCache.prototype*.shift () -> Object entry
 
 Remove the least recently used (oldest) entry. Returns the removed entry, or `undefined` if the cache was empty.
@@ -94,6 +87,17 @@ If you need to perform any form of finalization of purged items, this is a good 
     }
 
 The returned entry must not include any strong references to other entries. See note in the documentation of `LRUCache.prototype.put (Object key, Object value) -> Object entry`.
+
+## Included in lru.js only
+
+### *LRUCache.prototype*.find (Object key) -> Object entry
+
+Check if `key` is in the cache *without registering recent use*. Feasible if
+you do not want to chage the state of the cache, but only "peek" at it.
+Returns the entry associated with `key` if found, otherwise `undefined` is
+returned.
+
+> **Note:** The entry returned is *managed by the cache* (until purged) and thus contains members with strong references which might be altered at any time by the cache object. You should look at the returned entry as being immutable.
 
 ### *LRUCache.prototype*.set (key, value) -> Object oldValue
 
@@ -157,7 +161,7 @@ As this code is most suitable for embedding, here is a shortlist of the essentia
 - *LRUCache.prototype*.**shift** -- used by **put** to "purge" an old entry.
 - *LRUCache.prototype*.**get** -- fetches a cached entry and registers that entry as being recently used.
 
-The border between "required" and "optional" code is marked in `lru.js` by a comment starting with `// Following code is optional`...
+To include only the minimal code above, require lru-core.js instead of lru.js
 
 # MIT license
 
