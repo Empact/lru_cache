@@ -1,4 +1,4 @@
-var LRUCache = require('./lru-core').LRUCache
+var LRUCache = require('./core').LRUCache
 
 // ----------------------------------------------------------------------------
 // Following code is optional and can be removed without breaking the core

@@ -1,14 +1,14 @@
 {
-  "name": "js-lru",
-  "version": "1.0.0",
+  "name": "lru_cache",
+  "version": "1.0.1",
   "description": "A finite key-value cache using the Least Recently Used (LRU) cache algorithm where the most recently used objects are keept in cache while less recently used items are purged.",
-  "main": "lru.js",
+  "main": "index.js",
   "scripts": {
     "test": "test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Empact/js-lru.git"
+    "url": "git+https://github.com/Empact/lru_cache.git"
   },
   "keywords": [
     "cache",
@@ -22,7 +22,7 @@
   "contributors": ["Ben Woosley <ben.woosley@gmail.com>", "javi santana", "fengmk2"],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Empact/js-lru/issues"
+    "url": "https://github.com/Empact/lru_cache/issues"
   },
-  "homepage": "https://github.com/Empact/js-lru#readme"
+  "homepage": "https://github.com/Empact/lru_cache#readme"
 }

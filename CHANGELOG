@@ -1,3 +1,11 @@
+Version 1.0.1 (Released 2016-03-29)
+===================================
+* Add links to Changelog
+* Rename lru-core to core.js, for inclusion via require('lru_cache/core')
+* Rename npm package and github to lru_cache, to match the main object
+https://github.com/Empact/lru_cache
+http://npmjs.com/package/lru_cache
+
 Version 1.0.0 (Released 2016-03-29)
 ===================================
 Bugs

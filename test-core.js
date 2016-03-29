@@ -2,7 +2,7 @@
 // $ node test.js
 // (Might work with other CommonJS-compatible environments)
 var assert = require('assert')
-var LRUCache = require('./lru-core').LRUCache
+var LRUCache = require('./core').LRUCache
 var c = new LRUCache(4)
 
 c.put('adam', 29)
