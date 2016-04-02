@@ -23,6 +23,7 @@ function LRUCache (limit) {
   this.size = 0
   // Maximum number of items this cache can hold.
   this.limit = limit
+  this.head = this.tail = undefined
   this._keymap = {}
 }
 
