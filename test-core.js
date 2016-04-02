@@ -1,6 +1,8 @@
 // Test which will run in nodejs
 // $ node test.js
 // (Might work with other CommonJS-compatible environments)
+'use strict'
+
 var assert = require('assert')
 var LRUCache = require('./core').LRUCache
 var c = new LRUCache(4)

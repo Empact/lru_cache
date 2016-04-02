@@ -16,6 +16,8 @@
  *
  *  removed  <--  <--  <--  <--  <--  <--  <--  <--  <--  <--  <--  added
  */
+'use strict'
+
 function LRUCache (limit) {
   // Current size of the cache. (Read-only).
   this.size = 0
