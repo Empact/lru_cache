@@ -47,7 +47,7 @@ Fancy ASCII art illustration of the general design:
 
 An entry is a simple `Object` with at least two members: `{key:Object, value:Object}`. An entry might also have a `newer` member which points to a newer entry, and/or a `older` member pointing to an older entry.
 
-## Included in lru-core.js and lru.js:
+## Included in lru_cache and lru_cache/core:
 
 ### new LRUCache(Number limit) -> LRUCache instance
 
@@ -88,7 +88,7 @@ If you need to perform any form of finalization of purged items, this is a good 
 
 The returned entry must not include any strong references to other entries. See note in the documentation of `LRUCache.prototype.put (Object key, Object value) -> Object entry`.
 
-## Included in lru.js only
+## Included in lru_cache only
 
 ### *LRUCache.prototype*.find (Object key) -> Object entry
 
@@ -161,7 +161,7 @@ As this code is most suitable for embedding, here is a shortlist of the essentia
 - *LRUCache.prototype*.**shift** -- used by **put** to "purge" an old entry.
 - *LRUCache.prototype*.**get** -- fetches a cached entry and registers that entry as being recently used.
 
-To include only the minimal code above, require lru-core.js instead of lru.js
+To include only the minimal code above, require lru_cache/core instead of lru_cache
 
 # MIT license
 

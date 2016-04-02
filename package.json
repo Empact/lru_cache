@@ -1,6 +1,6 @@
 {
   "name": "lru_cache",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A finite key-value cache using the Least Recently Used (LRU) cache algorithm where the most recently used objects are keept in cache while less recently used items are purged.",
   "main": "index.js",
   "scripts": {

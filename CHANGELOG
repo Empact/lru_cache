@@ -1,6 +1,7 @@
-Unreleased
+Version 1.0.2 (Released 2016-03-29)
 ===================================
 * Update copyright to 2016
+* Update some docs references to js-lru and lru-core.js
 
 Version 1.0.1 (Released 2016-03-29)
 ===================================
