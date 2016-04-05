@@ -58,15 +58,14 @@ c.put('b', 2)
 c.put('c', 3)
 assert.equal(c.size, 3)
 var e = c.shift()
-assert(e.key, 'a')
-assert(e.value, 1)
+assert.equal(e.key, 'a')
+assert.equal(e.value, 1)
 e = c.shift()
-assert(e.key, 'b')
-assert(e.value, 2)
+assert.equal(e.key, 'b')
+assert.equal(e.value, 2)
 e = c.shift()
-assert(e.key, 'c')
-assert(e.value, 3)
-c.forEach(function () { assert(false) }, true)
+assert.equal(e.key, 'c')
+assert.equal(e.value, 3)
 assert.equal(c.size, 0)
 
 c = new LRUCache(4)
@@ -84,3 +83,4 @@ assert.deepEqual(c.shift(), { key: 0, value: 4, newer: undefined, older: undefin
 assert.equal(c.size, 0) // check .size correct
 c.forEach(function () { assert(false) }, undefined, true)  // check .tail correct
 // If we made it down here, all tests passed. Neat.
+console.log('All tests passed!')
