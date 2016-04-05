@@ -66,6 +66,8 @@ assert.equal(e.value, 2)
 e = c.shift()
 assert.equal(e.key, 'c')
 assert.equal(e.value, 3)
+// test that forEach does not execute against any entries
+c.forEach(function () { assert(false) }, true)
 assert.equal(c.size, 0)
 
 c = new LRUCache(4)
