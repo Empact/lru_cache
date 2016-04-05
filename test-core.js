@@ -64,3 +64,4 @@ assert.deepEqual(c.shift(), { key: 0, value: 3, newer: undefined, older: undefin
 assert.deepEqual(c.shift(), { key: 0, value: 4, newer: undefined, older: undefined })
 assert.equal(c.size, 0) // check .size correct
 // If we made it down here, all tests passed. Neat.
+console.log('All core tests passed!')
