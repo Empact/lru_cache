@@ -84,5 +84,22 @@ assert.deepEqual(c.shift(), { key: 0, value: 3, newer: undefined, older: undefin
 assert.deepEqual(c.shift(), { key: 0, value: 4, newer: undefined, older: undefined })
 assert.equal(c.size, 0) // check .size correct
 c.forEach(function () { assert(false) }, undefined, true)  // check .tail correct
+
+// test fixed capacity
+c = new LRUCache(2)
+
+c.put('one', 1)
+c.put('two', 2)
+c.put('three', 3)
+c.put('four', 4)
+c.put('five', 5)
+c.put('six', 6)
+c.put('seven', 7)
+c.put('eight', 8)
+
+assert.strictEqual(c.size, 2)
+assert.strictEqual(c.limit, 2)
+assert.strictEqual(Object.keys(c._keymap).length, 2)
+
 // If we made it down here, all tests passed. Neat.
 console.log('All tests passed!')
