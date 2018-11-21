@@ -48,6 +48,7 @@ LRUCache.prototype.put = function (key, value) {
   this.tail = entry
   if (this.size === this.limit) {
     // we hit the limit -- remove the head
+    this.size++
     return this.shift()
   } else {
     // increase the size counter
